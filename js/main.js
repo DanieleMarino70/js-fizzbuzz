@@ -39,23 +39,17 @@ const sectionEl = document.getElementById("fizz-buzz-section");
 const containerEl = document.createElement("div");
 const rowEl = document.createElement("div");
 
-
-
-
-
 containerEl.classList.add("container");
 rowEl.classList.add("row");
-
-
-
-
-
 
 sectionEl.append(containerEl);
 containerEl.append(rowEl);
 
 
 // 2° BONUS CON CHECK
+// GENERO UN NUMERO CHE CHIEDO ALL'UTENTE
+// CHECKO SE E' UN NUMERO O NO, NEL CASO FOSSE NaN RICARICO LA PAGINA
+// NEL CASO SIA UN NUMERO GENERO UN CICLO
 
 const randomNumber = parseInt(prompt("Quanti box vuoi vedere?"));
 if(isNaN(randomNumber)){
@@ -64,38 +58,44 @@ if(isNaN(randomNumber)){
 }
 else {
     for(let i=1; i <= randomNumber; i++){
+        //creo delle costanti che creano un elemento div ogni ciclo
+        const colEl = document.createElement("div");
+        const boxEl = document.createElement("div");
 
-    const colEl = document.createElement("div");
-    const boxEl = document.createElement("div");
 
+        if ((i % 3 == 0) && (i % 5 == 0)){
+            //vado attribuire negli if le classi che dovranno avere
+            //e in box metto la frase per ogni if che dovrà contenere
+            colEl.classList.add("col-auto");
+            boxEl.classList.add("box");
+            boxEl.append("FizzBuzz");
+            boxEl.style.backgroundColor = "coral";
+        }
+        else if (i % 3 == 0){
+            colEl.classList.add("col-auto");
+            boxEl.classList.add("box");
+            boxEl.append("Fizz");
+            boxEl.style.backgroundColor = "#E5989B";
+        }
+        else if (i % 5 == 0){
+            colEl.classList.add("col-auto");
+            boxEl.classList.add("box");
+            boxEl.append("Buzz");
+            boxEl.style.backgroundColor = "#FFB4A2";
+        }
+        else {
+            colEl.classList.add("col-auto");
+            boxEl.classList.add("box");
+            boxEl.append(i);
+            boxEl.style.backgroundColor = "#B5838D";
+        }
 
-    if ((i % 3 == 0) && (i % 5 == 0)){
-        colEl.classList.add("col-auto");
-        boxEl.classList.add("box");
-        boxEl.append("FizzBuzz");
-        boxEl.style.backgroundColor = "coral";
+        // dopo la scelta dell'if genero la colonna con dentro il box
+        rowEl.append(colEl);
+        colEl.append(boxEl);
+
+        // re inizio il ciclo se condizione del for è vera
     }
-    else if (i % 3 == 0){
-        colEl.classList.add("col-auto");
-        boxEl.classList.add("box");
-        boxEl.append("Fizz");
-        boxEl.style.backgroundColor = "#E5989B";
-    }
-    else if (i % 5 == 0){
-        colEl.classList.add("col-auto");
-        boxEl.classList.add("box");
-        boxEl.append("Buzz");
-        boxEl.style.backgroundColor = "#FFB4A2";
-    }
-    else {
-        colEl.classList.add("col-auto");
-        boxEl.classList.add("box");
-        boxEl.append(i);
-        boxEl.style.backgroundColor = "#B5838D";
-    }
-    rowEl.append(colEl);
-    colEl.append(boxEl);
-}
 }
 
 
