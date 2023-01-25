@@ -12,3 +12,56 @@
 // Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.
 
 
+
+
+// ESERCIZIO SENZA BONUS
+// for(let i=1; i <= 100; i++){
+//     if ((i % 3 == 0) && (i % 5 == 0)){
+//         console.log("FizzBuzz");
+//     }
+//     else if (i % 3 == 0){
+//         console.log("Fizz");
+//     }
+//     else if (i % 5 == 0){
+//         console.log("Buzz");
+//     }
+//     else (console.log(i));
+// }
+
+
+// 1° BONUS
+// PRENDO LA SECTION CON L'ID "FIZZ-BUZZ-SECTION
+// CI METTO DENTRO IL CONTAINER CON containerEl -> 
+//         - creo un elemento di tipo div e poi alla classlist aggiungo "container";
+//         - faccio append a sectionEl di container per aggiungerlo alla section; 
+// STESSA COSA CON ROW SOLO CHE FACCIO APPEND CON "containerEl"
+const sectionEl = document.getElementById("fizz-buzz-section");
+const containerEl = document.createElement("div");
+const rowEl = document.createElement("div");
+const colEl = document.createElement("div");
+const boxEl = document.createElement("div");
+
+containerEl.classList.add("container");
+rowEl.classList.add("row");
+colEl.classList.add("col-auto");
+boxEl.classList.add("box");
+
+
+sectionEl.append(containerEl);
+containerEl.append(rowEl);
+rowEl.append(colEl);
+
+
+for(let i=1; i <= 100; i++){
+    if ((i % 3 == 0) && (i % 5 == 0)){
+        console.log("FizzBuzz");
+    }
+    else if (i % 3 == 0){
+        console.log("Fizz");
+    }
+    else if (i % 5 == 0){
+        console.log("Buzz");
+    }
+    else (console.log(i));
+}
+
