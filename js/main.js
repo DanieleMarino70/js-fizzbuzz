@@ -30,19 +30,19 @@
 
 
 // 1° BONUS
-// PRENDO LA SECTION CON L'ID "FIZZ-BUZZ-SECTION
+// PRENDO IL MAIN CON L'ID "fizz-buzz-main"
 // CI METTO DENTRO IL CONTAINER CON containerEl -> 
 //         - creo un elemento di tipo div e poi alla classlist aggiungo "container";
-//         - faccio append a sectionEl di container per aggiungerlo alla section; 
+//         - faccio append a mainEl di container per aggiungerlo al main; 
 // STESSA COSA CON ROW SOLO CHE FACCIO APPEND CON "containerEl"
-const sectionEl = document.getElementById("fizz-buzz-section");
+const mainEl = document.getElementById("fizz-buzz-main");
 const containerEl = document.createElement("div");
 const rowEl = document.createElement("div");
 
 containerEl.classList.add("container");
 rowEl.classList.add("row");
 
-sectionEl.append(containerEl);
+mainEl.append(containerEl);
 containerEl.append(rowEl);
 
 
