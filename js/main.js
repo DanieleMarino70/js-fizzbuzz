@@ -38,30 +38,66 @@
 const sectionEl = document.getElementById("fizz-buzz-section");
 const containerEl = document.createElement("div");
 const rowEl = document.createElement("div");
-const colEl = document.createElement("div");
-const boxEl = document.createElement("div");
+
+
+
+
 
 containerEl.classList.add("container");
 rowEl.classList.add("row");
-colEl.classList.add("col-auto");
-boxEl.classList.add("box");
+
+
+
+
 
 
 sectionEl.append(containerEl);
 containerEl.append(rowEl);
-rowEl.append(colEl);
 
 
-for(let i=1; i <= 100; i++){
+// 2° BONUS CON CHECK
+
+const randomNumber = parseInt(prompt("Quanti box vuoi vedere?"));
+if(isNaN(randomNumber)){
+    alert("Perfavore metti un numero");
+    window.location.reload();
+}
+else {
+    for(let i=1; i <= randomNumber; i++){
+
+    const colEl = document.createElement("div");
+    const boxEl = document.createElement("div");
+
+
     if ((i % 3 == 0) && (i % 5 == 0)){
-        console.log("FizzBuzz");
+        colEl.classList.add("col-auto");
+        boxEl.classList.add("box");
+        boxEl.append("FizzBuzz");
+        boxEl.style.backgroundColor = "coral";
     }
     else if (i % 3 == 0){
-        console.log("Fizz");
+        colEl.classList.add("col-auto");
+        boxEl.classList.add("box");
+        boxEl.append("Fizz");
+        boxEl.style.backgroundColor = "#E5989B";
     }
     else if (i % 5 == 0){
-        console.log("Buzz");
+        colEl.classList.add("col-auto");
+        boxEl.classList.add("box");
+        boxEl.append("Buzz");
+        boxEl.style.backgroundColor = "#FFB4A2";
     }
-    else (console.log(i));
+    else {
+        colEl.classList.add("col-auto");
+        boxEl.classList.add("box");
+        boxEl.append(i);
+        boxEl.style.backgroundColor = "#B5838D";
+    }
+    rowEl.append(colEl);
+    colEl.append(boxEl);
 }
+}
+
+
+
 
